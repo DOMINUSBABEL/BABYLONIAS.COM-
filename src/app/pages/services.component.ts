@@ -47,6 +47,38 @@ import { MatIconModule } from '@angular/material/icon';
           <h3 class="text-lg font-bold mb-4 tracking-wide text-white group-hover:text-tech transition-colors relative z-10">{{ t().svcGovTitle }}</h3>
           <p class="text-sm text-white/50 leading-relaxed font-light relative z-10">{{ t().svcGovDesc }}</p>
         </div>
+
+        <!-- Multi-Channel Agents -->
+        <div class="sec-stagger opacity-0 bg-white/[0.02] p-8 border border-white/5 hover:border-[#38BDF8]/50 rounded-3xl transition-all duration-500 hover:-translate-y-2 group relative overflow-hidden shadow-sm hover:shadow-[0_15px_40px_rgba(56,189,248,0.15)] flex flex-col items-center text-center">
+          <div class="absolute inset-0 bg-gradient-to-b from-[#38BDF8]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <mat-icon class="text-tech mb-8 opacity-80 group-hover:opacity-100 group-hover:scale-125 transition-all !text-4xl w-10 h-10 group-hover:drop-shadow-[0_0_15px_rgba(56,189,248,0.6)]">forum</mat-icon>
+          <h3 class="text-lg font-bold mb-4 tracking-wide text-white group-hover:text-tech transition-colors relative z-10">{{ t().svcAgentTitle }}</h3>
+          <p class="text-sm text-white/50 leading-relaxed font-light relative z-10">{{ t().svcAgentDesc }}</p>
+        </div>
+
+        <!-- Edge Auth Bridge -->
+        <div class="sec-stagger opacity-0 bg-white/[0.02] p-8 border border-white/5 hover:border-[#38BDF8]/50 rounded-3xl transition-all duration-500 hover:-translate-y-2 group relative overflow-hidden shadow-sm hover:shadow-[0_15px_40px_rgba(56,189,248,0.15)] flex flex-col items-center text-center">
+          <div class="absolute inset-0 bg-gradient-to-b from-[#38BDF8]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <mat-icon class="text-tech mb-8 opacity-80 group-hover:opacity-100 group-hover:scale-125 transition-all !text-4xl w-10 h-10 group-hover:drop-shadow-[0_0_15px_rgba(56,189,248,0.6)]">memory</mat-icon>
+          <h3 class="text-lg font-bold mb-4 tracking-wide text-white group-hover:text-tech transition-colors relative z-10">{{ t().svcEdgeTitle }}</h3>
+          <p class="text-sm text-white/50 leading-relaxed font-light relative z-10">{{ t().svcEdgeDesc }}</p>
+        </div>
+
+        <!-- Dialectical Engine -->
+        <div class="sec-stagger opacity-0 bg-white/[0.02] p-8 border border-white/5 hover:border-[#38BDF8]/50 rounded-3xl transition-all duration-500 hover:-translate-y-2 group relative overflow-hidden shadow-sm hover:shadow-[0_15px_40px_rgba(56,189,248,0.15)] flex flex-col items-center text-center">
+          <div class="absolute inset-0 bg-gradient-to-b from-[#38BDF8]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <mat-icon class="text-tech mb-8 opacity-80 group-hover:opacity-100 group-hover:scale-125 transition-all !text-4xl w-10 h-10 group-hover:drop-shadow-[0_0_15px_rgba(56,189,248,0.6)]">sync_alt</mat-icon>
+          <h3 class="text-lg font-bold mb-4 tracking-wide text-white group-hover:text-tech transition-colors relative z-10">{{ t().svcHakdTitle }}</h3>
+          <p class="text-sm text-white/50 leading-relaxed font-light relative z-10">{{ t().svcHakdDesc }}</p>
+        </div>
+
+        <!-- Digital Humanities -->
+        <div class="sec-stagger opacity-0 bg-white/[0.02] p-8 border border-white/5 hover:border-[#38BDF8]/50 rounded-3xl transition-all duration-500 hover:-translate-y-2 group relative overflow-hidden shadow-sm hover:shadow-[0_15px_40px_rgba(56,189,248,0.15)] flex flex-col items-center text-center">
+          <div class="absolute inset-0 bg-gradient-to-b from-[#38BDF8]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <mat-icon class="text-tech mb-8 opacity-80 group-hover:opacity-100 group-hover:scale-125 transition-all !text-4xl w-10 h-10 group-hover:drop-shadow-[0_0_15px_rgba(56,189,248,0.6)]">library_books</mat-icon>
+          <h3 class="text-lg font-bold mb-4 tracking-wide text-white group-hover:text-tech transition-colors relative z-10">{{ t().svcTeiTitle }}</h3>
+          <p class="text-sm text-white/50 leading-relaxed font-light relative z-10">{{ t().svcTeiDesc }}</p>
+        </div>
       </div>
     </section>
   `

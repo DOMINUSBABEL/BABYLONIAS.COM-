@@ -56,6 +56,42 @@ import { MatIconModule } from '@angular/material/icon';
             <p class="text-sm opacity-70 leading-relaxed font-light">{{ t().repo4Desc }}</p>
           </div>
         </div>
+
+        <!-- Repo 5 -->
+        <div class="sec-stagger opacity-0 flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-[#38BDF8]/[0.02] hover:border-tech/40 transition-all duration-300 group hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(56,189,248,0.05)]">
+          <mat-icon class="text-white/30 mt-1 group-hover:text-tech transition-colors group-hover:scale-110 duration-300 group-hover:drop-shadow-[0_0_8px_rgba(56,189,248,0.6)]">account_tree</mat-icon>
+          <div>
+            <h4 class="text-lg font-mono text-tech tracking-tighter mb-2 font-bold">{{ t().repo5 }}</h4>
+            <p class="text-sm opacity-70 leading-relaxed font-light">{{ t().repo5Desc }}</p>
+          </div>
+        </div>
+
+        <!-- Repo 6 -->
+        <div class="sec-stagger opacity-0 flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-[#38BDF8]/[0.02] hover:border-tech/40 transition-all duration-300 group hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(56,189,248,0.05)]">
+          <mat-icon class="text-white/30 mt-1 group-hover:text-tech transition-colors group-hover:scale-110 duration-300 group-hover:drop-shadow-[0_0_8px_rgba(56,189,248,0.6)]">vpn_key</mat-icon>
+          <div>
+            <h4 class="text-lg font-mono text-tech tracking-tighter mb-2 font-bold">{{ t().repo6 }}</h4>
+            <p class="text-sm opacity-70 leading-relaxed font-light">{{ t().repo6Desc }}</p>
+          </div>
+        </div>
+
+        <!-- Repo 7 -->
+        <div class="sec-stagger opacity-0 flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-[#38BDF8]/[0.02] hover:border-tech/40 transition-all duration-300 group hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(56,189,248,0.05)]">
+          <mat-icon class="text-white/30 mt-1 group-hover:text-tech transition-colors group-hover:scale-110 duration-300 group-hover:drop-shadow-[0_0_8px_rgba(56,189,248,0.6)]">auto_stories</mat-icon>
+          <div>
+            <h4 class="text-lg font-mono text-tech tracking-tighter mb-2 font-bold">{{ t().repo7 }}</h4>
+            <p class="text-sm opacity-70 leading-relaxed font-light">{{ t().repo7Desc }}</p>
+          </div>
+        </div>
+
+        <!-- Repo 8 -->
+        <div class="sec-stagger opacity-0 flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-[#38BDF8]/[0.02] hover:border-tech/40 transition-all duration-300 group hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(56,189,248,0.05)]">
+          <mat-icon class="text-white/30 mt-1 group-hover:text-tech transition-colors group-hover:scale-110 duration-300 group-hover:drop-shadow-[0_0_8px_rgba(56,189,248,0.6)]">terminal</mat-icon>
+          <div>
+            <h4 class="text-lg font-mono text-tech tracking-tighter mb-2 font-bold">{{ t().repo8 }}</h4>
+            <p class="text-sm opacity-70 leading-relaxed font-light">{{ t().repo8Desc }}</p>
+          </div>
+        </div>
       </div>
     </section>
   `

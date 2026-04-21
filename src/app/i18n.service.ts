@@ -57,6 +57,22 @@ export interface TransDict {
   repo3Desc: string;
   repo4: string;
   repo4Desc: string;
+  svcAgentTitle: string;
+  svcAgentDesc: string;
+  svcEdgeTitle: string;
+  svcEdgeDesc: string;
+  svcHakdTitle: string;
+  svcHakdDesc: string;
+  svcTeiTitle: string;
+  svcTeiDesc: string;
+  repo5: string;
+  repo5Desc: string;
+  repo6: string;
+  repo6Desc: string;
+  repo7: string;
+  repo7Desc: string;
+  repo8: string;
+  repo8Desc: string;
   acervix: string;
   acervixDesc: string;
   rights: string;
@@ -126,6 +142,22 @@ const TRANSLATIONS: Record<Lang, TransDict> = {
     repo3Desc: 'Capa criptográfica de Firmware (E2E-Encryption) diseñando un túnel soberano entre OEM Chino asíncrono y los data-centers de Babel.',
     repo4: 'GovTech-Oracle RAG',
     repo4Desc: 'Corpus conversacional inyectado mediante metodologías RAG (Retrieval-Augmented Generation) sobre los repositorios de normatividad estatal y códigos del legislativo.',
+    svcAgentTitle: 'Agentes Multi-Canal Autónomos',
+    svcAgentDesc: 'Orquestación de bots descentralizados interactuando vía WhatsApp, Telegram, X (Twitter) y Dashboard Web en tiempo real.',
+    svcEdgeTitle: 'Inferencia Edge & Auth-Bridge',
+    svcEdgeDesc: 'Evasión de costos de API mediante puentes OAuth locales y modelos de código abierto (Ollama) para flujos B2B continuos.',
+    svcHakdTitle: 'Motor Dialéctico HAKD',
+    svcHakdDesc: 'Algoritmo de resolución Tesis-Antítesis-Síntesis basado en Hegel y Asimov para prevenir alucinaciones cognitivas.',
+    svcTeiTitle: 'Humanidades Digitales TEI',
+    svcTeiDesc: 'Análisis nativo de corpus XML-TEI y redes semánticas bajo principios FAIR, inyectando rigor académico a los RLM.',
+    repo5: 'OpenClaw Geist Engine',
+    repo5Desc: 'Motor de razonamiento dialéctico con integraciones Sandbox para ejecución segura de código y análisis.',
+    repo6: 'OAuth-Bridge Protocol',
+    repo6Desc: 'Autenticación en la sombra interceptando tokens de la CLI de Gemini para minería B2B a coste cero.',
+    repo7: 'Echavarría TEI-Parser',
+    repo7Desc: 'Estructurador dinámico de humanidades digitales y ontologías sobre el File System y memorias Wiki.',
+    repo8: 'Termux Mobile Deployer',
+    repo8Desc: 'Capa de virtualización universal para levantar motores cognitivos en terminales móviles de bajo recurso (Termux/iSH).',
     acervix: 'Acompañamiento Macro-Financiero: ACERVIX',
     acervixDesc: 'La consolidación institucional de Babylon.ia se palanquea bajo la estricta batuta de José David Gallego (ACERVIX Consulting). Incorporando décadas de rigor especializado en penetración de mercados B2G/B2B, levantamiento de capital corporativo, compliance transnacional de Deep-Tech y tracción hiper-acelerada para Startups en LatAm.',
     rights: 'CONSTITUCIÓN S.A.S. • COLOMBIA 2026 • TODOS LOS DERECHOS RESERVADOS',
@@ -191,6 +223,22 @@ const TRANSLATIONS: Record<Lang, TransDict> = {
     repo3Desc: 'Firmware bridge connecting Chinese OEM hardware with our sovereign cloud.',
     repo4: 'GovTech-RAG',
     repo4Desc: 'Retrieval-Augmented Generation for strict state contractual constraints.',
+    svcAgentTitle: 'Multi-Channel Autonomous Agents',
+    svcAgentDesc: 'Orchestration of decentralized bots interacting via WhatsApp, Telegram, X (Twitter), and Web Dashboard in real-time.',
+    svcEdgeTitle: 'Edge Inference & Auth-Bridge',
+    svcEdgeDesc: 'Bypassing API costs through local OAuth bridges and open-source models (Ollama) for continuous B2B workflows.',
+    svcHakdTitle: 'HAKD Dialectical Engine',
+    svcHakdDesc: 'Thesis-Antithesis-Synthesis resolution algorithm based on Hegel and Asimov to prevent cognitive hallucinations.',
+    svcTeiTitle: 'TEI Digital Humanities',
+    svcTeiDesc: 'Native analysis of XML-TEI corpora and semantic networks under FAIR principles, injecting academic rigor into RLMs.',
+    repo5: 'OpenClaw Geist Engine',
+    repo5Desc: 'Dialectical reasoning engine with Sandbox integrations for secure code execution and analysis.',
+    repo6: 'OAuth-Bridge Protocol',
+    repo6Desc: 'Shadow authentication intercepting Gemini CLI tokens for zero-cost B2B mining.',
+    repo7: 'Echavarría TEI-Parser',
+    repo7Desc: 'Dynamic structurer of digital humanities and ontologies over the File System and Wiki memories.',
+    repo8: 'Termux Mobile Deployer',
+    repo8Desc: 'Universal virtualization layer to run cognitive engines on low-resource mobile terminals (Termux/iSH).',
     acervix: 'Strategic Consulting by ACERVIX',
     acervixDesc: 'Support, external consulting, and corporate scaling driven under the strategic direction of José David Gallego.',
     rights: 'S.A.S. CONSTITUTION • COLOMBIA 2026 • ALL RIGHTS RESERVED',
@@ -256,6 +304,22 @@ const TRANSLATIONS: Record<Lang, TransDict> = {
     repo3Desc: 'Firmware-Brücke zwischen chinesischer OEM-Hardware und unserer souveränen Cloud.',
     repo4: 'GovTech-RAG',
     repo4Desc: 'Retrieval-Augmented Generation für strikte staatliche Vertragsbedingungen.',
+    svcAgentTitle: 'Multi-Kanal Autonome Agenten',
+    svcAgentDesc: 'Orchestrierung dezentraler Bots, die über WhatsApp, Telegram, X (Twitter) und Web-Dashboard in Echtzeit interagieren.',
+    svcEdgeTitle: 'Edge-Inferenz & Auth-Bridge',
+    svcEdgeDesc: 'Umgehung von API-Kosten durch lokale OAuth-Brücken und Open-Source-Modelle (Ollama) für kontinuierliche B2B-Workflows.',
+    svcHakdTitle: 'HAKD Dialektischer Motor',
+    svcHakdDesc: 'These-Antithese-Synthese-Auflösungsalgorithmus basierend auf Hegel und Asimov zur Vermeidung kognitiver Halluzinationen.',
+    svcTeiTitle: 'TEI Digitale Geisteswissenschaften',
+    svcTeiDesc: 'Native Analyse von XML-TEI-Korpora und semantischen Netzwerken unter FAIR-Prinzipien zur Einbringung akademischer Strenge.',
+    repo5: 'OpenClaw Geist Engine',
+    repo5Desc: 'Motor für dialektisches Denken mit Sandbox-Integrationen zur sicheren Code-Ausführung.',
+    repo6: 'OAuth-Bridge Protocol',
+    repo6Desc: 'Schattenauthentifizierung, die Gemini-CLI-Token abfängt, für B2B-Mining zum Nulltarif.',
+    repo7: 'Echavarría TEI-Parser',
+    repo7Desc: 'Dynamischer Strukturierer digitaler Geisteswissenschaften über das Dateisystem und Wiki-Speicher.',
+    repo8: 'Termux Mobile Deployer',
+    repo8Desc: 'Universelle Virtualisierungsschicht zum Ausführen kognitiver Engines auf ressourcenschwachen mobilen Endgeräten.',
     acervix: 'Strategische Beratung durch ACERVIX',
     acervixDesc: 'Unterstützung, externe Beratung und Unternehmensskalierung unter der Leitung von José David Gallego.',
     rights: 'S.A.S. GRÜNDUNG • KOLUMBIEN 2026 • ALLE RECHTE VORBEHALTEN',
@@ -321,6 +385,22 @@ const TRANSLATIONS: Record<Lang, TransDict> = {
     repo3Desc: '将中国OEM硬件与主权云连接的固件桥。',
     repo4: 'GovTech-RAG',
     repo4Desc: '针对严格国家合同限制的检索增强生成。',
+    svcAgentTitle: '多渠道自主代理',
+    svcAgentDesc: '编排去中心化机器人，通过WhatsApp、Telegram、X (Twitter) 和网络仪表板进行实时交互。',
+    svcEdgeTitle: '边缘推理与验证桥 (Auth-Bridge)',
+    svcEdgeDesc: '通过本地OAuth桥接和开源模型 (Ollama) 绕过API成本，实现持续的B2B工作流。',
+    svcHakdTitle: 'HAKD辩证引擎',
+    svcHakdDesc: '基于黑格尔和阿西莫夫的正反合分析算法，防止认知幻觉。',
+    svcTeiTitle: 'TEI数字人文',
+    svcTeiDesc: '在FAIR原则下对XML-TEI语料库和语义网络进行本地分析，为RLM注入学术严谨性。',
+    repo5: 'OpenClaw Geist Engine',
+    repo5Desc: '带有沙箱集成的辩证推理引擎，用于安全代码执行和分析。',
+    repo6: 'OAuth-Bridge Protocol',
+    repo6Desc: '拦截Gemini CLI令牌的影子身份验证，实现零成本B2B数据挖掘。',
+    repo7: 'Echavarría TEI-Parser',
+    repo7Desc: '在文件系统和Wiki记忆库上动态结构化数字人文与本体论。',
+    repo8: 'Termux Mobile Deployer',
+    repo8Desc: '通用虚拟化层，用于在低资源移动终端 (Termux/iSH) 上运行认知引擎。',
     acervix: 'ACERVIX 战略咨询',
     acervixDesc: '在 José David Gallego 的领导下，提供支持、外部咨询与企业规模扩展。',
     rights: 'S.A.S. 注册 • 哥伦比亚 2026 • 版权所有',
@@ -386,6 +466,22 @@ const TRANSLATIONS: Record<Lang, TransDict> = {
     repo3Desc: 'Pont firmware connectant le matériel OEM chinois à notre cloud souverain.',
     repo4: 'GovTech-RAG',
     repo4Desc: 'Génération Augmentée par la Recherche pour les contraintes contractuelles d\'État complexes.',
+    svcAgentTitle: 'Agents Autonomes Multicanaux',
+    svcAgentDesc: 'Orchestration de bots décentralisés interagissant via WhatsApp, Telegram, X (Twitter) et Web Dashboard en temps réel.',
+    svcEdgeTitle: 'Inférence Edge & Auth-Bridge',
+    svcEdgeDesc: 'Contournement des coûts d\'API via des ponts OAuth locaux et modèles open-source (Ollama) pour des flux B2B continus.',
+    svcHakdTitle: 'Moteur Dialectique HAKD',
+    svcHakdDesc: 'Algorithme de résolution Thèse-Antithèse-Synthèse basé sur Hegel et Asimov pour prévenir les hallucinations cognitives.',
+    svcTeiTitle: 'Humanités Numériques TEI',
+    svcTeiDesc: 'Analyse native de corpus XML-TEI et réseaux sémantiques sous principes FAIR, injectant une rigueur académique aux RLMs.',
+    repo5: 'OpenClaw Geist Engine',
+    repo5Desc: 'Moteur de raisonnement dialectique avec intégration Sandbox pour l\'exécution sécurisée.',
+    repo6: 'OAuth-Bridge Protocol',
+    repo6Desc: 'Authentification de l\'ombre interceptant les tokens CLI Gemini pour l\'exploration B2B à coût nul.',
+    repo7: 'Echavarría TEI-Parser',
+    repo7Desc: 'Structureur dynamique d\'humanités numériques et ontologies sur le File System et mémoires Wiki.',
+    repo8: 'Termux Mobile Deployer',
+    repo8Desc: 'Couche de virtualisation universelle pour exécuter des moteurs cognitifs sur terminaux mobiles (Termux/iSH).',
     acervix: 'Consulting Stratégique par ACERVIX',
     acervixDesc: 'Soutien, conseil externe et mise à l\'échelle de l\'entreprise sous la direction stratégique de José David Gallego.',
     rights: 'CONSTITUTION S.A.S. • COLOMBIE 2026 • TOUS DROITS RÉSERVÉS',
