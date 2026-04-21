@@ -1,247 +1,69 @@
-<div class="w-full min-h-screen bg-[#050505] text-[#E5E5E5] font-sans overflow-x-hidden p-6 md:p-10 relative selection:bg-[#D4AF37] selection:text-black">
-  <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-50"></div>
+<div class="w-full min-h-screen bg-[#050505] text-[#E5E5E5] font-sans flex flex-col justify-between overflow-x-hidden p-6 md:p-10 relative selection:bg-[#38BDF8] selection:text-black">
+  <!-- Interactive background subtle glow -->
+  <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-[#38BDF8] to-transparent opacity-50 blur-sm"></div>
   
-  <div class="max-w-[1200px] mx-auto w-full flex flex-col gap-16 pb-20">
+  <div class="max-w-[1200px] mx-auto w-full flex flex-col gap-10 flex-grow relative z-10">
     
     <!-- Top Navigation / Lang Switcher -->
-    <nav class="flex justify-between items-center hero-stagger opacity-0">
-      <div class="text-[10px] tracking-widest text-[#D4AF37] font-bold">BABYLON.IA ENGINE</div>
-      <div class="flex gap-4">
+    <nav class="flex flex-col md:flex-row justify-between items-center hero-stagger">
+      <div class="flex items-center gap-3 mb-4 md:mb-0">
+        <div class="w-6 h-6 rounded-md bg-[#38BDF8]/20 flex items-center justify-center border border-[#38BDF8]/40 shadow-[0_0_15px_rgba(56,189,248,0.2)]">
+          <div class="w-2 h-2 rounded-full bg-[#38BDF8] animate-pulse"></div>
+        </div>
+        <div class="text-[14px] tracking-widest text-[#38BDF8] font-bold"><a routerLink="/" class="hover:opacity-80 transition-opacity">BABYLON.IA ENGINE</a></div>
+      </div>
+      
+      <!-- Primary nav Links -->
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-[10px] md:text-xs tracking-widest uppercase mb-4 md:mb-0 lang-update-fx">
+        <a routerLink="/" routerLinkActive="text-tech border-b border-tech" [routerLinkActiveOptions]="{exact: true}" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Inicio</a>
+        <a routerLink="/thesis" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Tesis</a>
+        <a routerLink="/services" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Servicios</a>
+        <a routerLink="/tech" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Núcleo</a>
+        <a routerLink="/hub" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Hub</a>
+        <a routerLink="/portfolio" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Portafolio</a>
+        <a routerLink="/consulting" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Consultoría</a>
+      </div>
+
+      <!-- Lang selection -->
+      <div class="flex gap-4 bg-white/5 px-4 py-2 rounded-full border border-white/10 backdrop-blur-md">
         @for (l of t().nav_langs; track l.code) {
           <button 
             (click)="setLang(l.code)"
-            class="text-[10px] tracking-widest transition-all duration-300 hover:text-[#D4AF37]"
+            class="text-[10px] tracking-widest transition-all duration-300 hover:text-[#38BDF8] relative"
             [class.opacity-100]="lang() === l.code"
-            [class.text-[#D4AF37]]="lang() === l.code"
+            [class.text-[#38BDF8]]="lang() === l.code"
+            [class.font-bold]="lang() === l.code"
             [class.opacity-40]="lang() !== l.code"
           >
-            {{ l.label }}
+             {{ l.label }}
+             @if (lang() === l.code) {
+               <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#38BDF8]"></div>
+             }
           </button>
         }
       </div>
     </nav>
 
-    <!-- Header / Hero -->
-    <header class="flex flex-col md:flex-row justify-between items-start pt-10 gap-8 lang-update-fx">
-      <div class="flex flex-col hero-stagger opacity-0">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="status-dot"></span>
-          <span class="text-[10px] tracking-[0.3em] font-mono text-white/50">{{ t().proj_id }}</span>
-        </div>
-        <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-white/90">BABYLON<span class="text-gold">.IA</span></h1>
-        <p class="text-sm md:text-base opacity-60 tracking-[0.2em] uppercase mt-4 max-w-xl">{{ t().subtitle }}</p>
-      </div>
-      <div class="text-left md:text-right hero-stagger opacity-0">
-        <div class="inline-block px-4 py-1.5 border border-subtle rounded text-[10px] tracking-widest text-gold mb-3 bg-[#D4AF37]/5 shadow-[0_0_15px_rgba(212,175,55,0.1)]">{{ t().confidential }}</div>
-        <div class="text-[10px] md:text-xs opacity-40 uppercase font-mono">{{ t().prepared }}</div>
-      </div>
-    </header>
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col relative w-full pt-10 pb-20">
+      <router-outlet></router-outlet>
+    </main>
 
-    <!-- Block 1 & 2: Market & Tech Nucleus -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lang-update-fx">
-      
-      <!-- Market Thesis -->
-      <section #animateSection class="opacity-0 flex flex-col gap-6 bg-white/[0.02] border border-white/5 p-8 rounded-2xl hover:bg-white/[0.04] transition-all">
-        <div class="border-l-2 border-[#D4AF37] pl-6 py-2 sec-stagger opacity-0">
-          <h2 class="text-xs font-semibold tracking-widest uppercase text-gold mb-3">{{ t().thesis }}</h2>
-          <p class="text-2xl font-light leading-snug mb-6">{{ t().thesisDesc }} <br/><span class="text-white font-normal">{{ t().thesisChinaLatam }}</span></p>
-          <ul class="space-y-4 text-sm opacity-60">
-            <li class="flex items-center gap-3"><span class="text-gold">▹</span> {{ t().t1 }}</li>
-            <li class="flex items-center gap-3"><span class="text-gold">▹</span> {{ t().t2 }}</li>
-            <li class="flex items-center gap-3"><span class="text-gold">▹</span> {{ t().t3 }}</li>
-          </ul>
-        </div>
-      </section>
+  </div>
 
-      <!-- Tech Nucleus -->
-      <section #animateSection class="opacity-0 flex flex-col gap-6 relative overflow-hidden bg-card p-8 rounded-2xl border border-subtle">
-        <div class="absolute -right-10 -bottom-10 w-64 h-64 border-[1px] border-[#D4AF37]/20 rounded-full blur-sm"></div>
-        <div class="absolute -right-32 -top-10 w-64 h-64 border-[1px] border-[#D4AF37]/10 rounded-full"></div>
-        
-        <h2 class="text-xs font-semibold tracking-widest uppercase text-gold mb-6 sec-stagger opacity-0 relative z-10">{{ t().nucleus }}</h2>
-        <div class="mb-8 sec-stagger opacity-0 relative z-10">
-          <div class="text-xs opacity-40 mb-2 font-mono uppercase">{{ t().platform }}</div>
-          <div class="text-4xl md:text-5xl font-bold tracking-tight text-white/90">AGENTS.AI</div>
-        </div>
-        <p class="text-sm opacity-70 leading-relaxed mb-8 italic sec-stagger opacity-0 border-l px-4 border-white/10 relative z-10">{{ t().agentsQuote }}</p>
-        
-        <div class="space-y-5 sec-stagger opacity-0 relative z-10 mt-auto">
-          <div class="flex justify-between items-end border-b border-white/10 pb-2 hover:border-[#D4AF37]/50 transition-colors">
-            <span class="text-xs opacity-50 uppercase tracking-wider">{{ t().architecture }}</span>
-            <span class="text-sm font-medium tracking-tight text-white">DOMINUSBABEL</span>
-          </div>
-          <div class="flex justify-between items-end border-b border-white/10 pb-2 hover:border-[#D4AF37]/50 transition-colors">
-            <span class="text-xs opacity-50 uppercase tracking-wider">{{ t().protocol }}</span>
-            <span class="text-sm font-medium tracking-tight text-white">LLM/RLM Proprietary</span>
-          </div>
-          <div class="flex justify-between items-end border-b border-white/10 pb-2 hover:border-[#D4AF37]/50 transition-colors">
-            <span class="text-xs opacity-50 uppercase tracking-wider">{{ t().revenue }}</span>
-            <span class="text-sm font-medium tracking-tight text-gold">{{ t().revSaaS }}</span>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Block 3: Physical Hub & Logistics -->
-    <section #animateSection class="opacity-0 grid grid-cols-1 md:grid-cols-12 gap-8 lang-update-fx">
-      <div class="md:col-span-5 flex flex-col justify-center border-l-2 border-white/20 pl-8 py-4 sec-stagger opacity-0">
-        <h2 class="text-xs font-semibold tracking-widest uppercase opacity-50 mb-4 text-white">{{ t().hub }}</h2>
-        <p class="text-2xl font-light leading-snug">{{ t().hubDesc }}</p>
-      </div>
-
-      <div class="md:col-span-7 flex flex-col sm:flex-row gap-4 sec-stagger opacity-0">
-        <!-- China -->
-        <div class="flex-1 flex items-start gap-4 bg-white/5 p-6 rounded-xl hover:bg-white/10 transition-colors border border-transparent hover:border-[#D4AF37]/20 group">
-          <div class="w-12 h-12 shrink-0 rounded-full border border-[#D4AF37]/50 flex items-center justify-center text-gold text-sm font-bold bg-[#D4AF37]/5 group-hover:bg-[#D4AF37]/20 transition-all">CN</div>
-          <div class="flex flex-col gap-1 mt-1">
-            <div class="text-sm font-bold tracking-wide">{{ t().china }}</div>
-            <div class="text-xs opacity-50 leading-relaxed">{{ t().chinaDesc }}</div>
-          </div>
-        </div>
-        <!-- Colombia -->
-        <div class="flex-1 flex items-start gap-4 bg-white/5 p-6 rounded-xl hover:bg-white/10 transition-colors border border-transparent hover:border-white/20 group">
-          <div class="w-12 h-12 shrink-0 rounded-full border border-white/20 flex items-center justify-center text-white text-sm font-bold bg-white/5 group-hover:bg-white/10 transition-all">CO</div>
-          <div class="flex flex-col gap-1 mt-1">
-            <div class="text-sm font-bold tracking-wide">{{ t().colombia }}</div>
-            <div class="text-xs opacity-50 leading-relaxed">{{ t().colombiaDesc }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Block 4: Ecosystem & Services -->
-    <section #animateSection class="opacity-0 flex flex-col gap-8 lang-update-fx mt-10">
-      <div class="text-center max-w-2xl mx-auto mb-6 sec-stagger opacity-0">
-        <h2 class="text-sm font-semibold tracking-[0.2em] uppercase text-gold mb-4">{{ t().ecosystem }}</h2>
-        <p class="text-lg opacity-60 font-light">{{ t().ecosystemDesc }}</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <!-- Agrotech -->
-        <div class="sec-stagger opacity-0 bg-[#0A0A0B] p-6 border border-white/5 hover:border-[#D4AF37]/40 rounded-xl transition-all duration-500 hover:-translate-y-1 group relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <mat-icon class="text-gold mb-6 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all">agriculture</mat-icon>
-          <h3 class="text-sm font-bold mb-3 tracking-wide text-white group-hover:text-gold transition-colors">{{ t().svcAgrTitle }}</h3>
-          <p class="text-xs opacity-50 leading-relaxed">{{ t().svcAgrDesc }}</p>
-        </div>
-        
-        <!-- Biometrics -->
-        <div class="sec-stagger opacity-0 bg-[#0A0A0B] p-6 border border-white/5 hover:border-[#D4AF37]/40 rounded-xl transition-all duration-500 hover:-translate-y-1 group relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <mat-icon class="text-gold mb-6 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all">fingerprint</mat-icon>
-          <h3 class="text-sm font-bold mb-3 tracking-wide text-white group-hover:text-gold transition-colors">{{ t().svcBioTitle }}</h3>
-          <p class="text-xs opacity-50 leading-relaxed">{{ t().svcBioDesc }}</p>
-        </div>
-        
-        <!-- IoT Energy -->
-        <div class="sec-stagger opacity-0 bg-[#0A0A0B] p-6 border border-white/5 hover:border-[#D4AF37]/40 rounded-xl transition-all duration-500 hover:-translate-y-1 group relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <mat-icon class="text-gold mb-6 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all">bolt</mat-icon>
-          <h3 class="text-sm font-bold mb-3 tracking-wide text-white group-hover:text-gold transition-colors">{{ t().svcIotTitle }}</h3>
-          <p class="text-xs opacity-50 leading-relaxed">{{ t().svcIotDesc }}</p>
-        </div>
-
-        <!-- Govtech -->
-        <div class="sec-stagger opacity-0 bg-[#0A0A0B] p-6 border border-white/5 hover:border-[#D4AF37]/40 rounded-xl transition-all duration-500 hover:-translate-y-1 group relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-b from-[#D4AF37]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <mat-icon class="text-gold mb-6 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all">account_balance</mat-icon>
-          <h3 class="text-sm font-bold mb-3 tracking-wide text-white group-hover:text-gold transition-colors">{{ t().svcGovTitle }}</h3>
-          <p class="text-xs opacity-50 leading-relaxed">{{ t().svcGovDesc }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Block 5: Portfolio / Repos -->
-    <section #animateSection class="opacity-0 flex flex-col gap-6 lang-update-fx mt-10">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-4 border-b border-white/10 pb-4 sec-stagger opacity-0">
-        <div>
-          <h2 class="text-sm font-semibold tracking-widest uppercase text-white mb-2">{{ t().portfolio }}</h2>
-          <p class="text-xs opacity-50">{{ t().portfolioDesc }}</p>
-        </div>
-        <a href="https://github.com/DOMINUSBABEL" target="_blank" rel="noopener noreferrer" class="mt-4 md:mt-0 flex items-center gap-2 text-xs font-mono text-gold hover:text-white transition-colors border border-gold/30 hover:border-white/50 px-4 py-2 rounded">
-          <mat-icon class="text-sm" aria-hidden="true">code</mat-icon> {{ t().viewGithub }}
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- Repo 1 -->
-        <div class="sec-stagger opacity-0 flex items-start gap-4 p-5 rounded-lg bg-white/[0.02] border border-white/10 hover:bg-white/[0.05] transition-colors">
-          <mat-icon class="text-white/40 mt-1">dns</mat-icon>
-          <div>
-            <h4 class="text-sm font-mono text-gold tracking-tighter mb-1">{{ t().repo1 }}</h4>
-            <p class="text-xs opacity-60">{{ t().repo1Desc }}</p>
-          </div>
-        </div>
-        
-        <!-- Repo 2 -->
-        <div class="sec-stagger opacity-0 flex items-start gap-4 p-5 rounded-lg bg-white/[0.02] border border-white/10 hover:bg-white/[0.05] transition-colors">
-          <mat-icon class="text-white/40 mt-1">psychology</mat-icon>
-          <div>
-            <h4 class="text-sm font-mono text-gold tracking-tighter mb-1">{{ t().repo2 }}</h4>
-            <p class="text-xs opacity-60">{{ t().repo2Desc }}</p>
-          </div>
-        </div>
-
-        <!-- Repo 3 -->
-        <div class="sec-stagger opacity-0 flex items-start gap-4 p-5 rounded-lg bg-white/[0.02] border border-white/10 hover:bg-white/[0.05] transition-colors">
-          <mat-icon class="text-white/40 mt-1">hub</mat-icon>
-          <div>
-            <h4 class="text-sm font-mono text-gold tracking-tighter mb-1">{{ t().repo3 }}</h4>
-            <p class="text-xs opacity-60">{{ t().repo3Desc }}</p>
-          </div>
-        </div>
-
-        <!-- Repo 4 -->
-        <div class="sec-stagger opacity-0 flex items-start gap-4 p-5 rounded-lg bg-white/[0.02] border border-white/10 hover:bg-white/[0.05] transition-colors">
-          <mat-icon class="text-white/40 mt-1">gavel</mat-icon>
-          <div>
-            <h4 class="text-sm font-mono text-gold tracking-tighter mb-1">{{ t().repo4 }}</h4>
-            <p class="text-xs opacity-60">{{ t().repo4Desc }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Block 6: ACERVIX Consulting & Leadership -->
-    <section #animateSection class="opacity-0 grid grid-cols-1 md:grid-cols-2 gap-8 lang-update-fx mt-10">
-      
-      <!-- ACERVIX -->
-      <div class="sec-stagger opacity-0 p-8 rounded-2xl bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 relative overflow-hidden group">
-        <div class="absolute -left-20 -top-20 w-40 h-40 bg-[#D4AF37]/5 rounded-full blur-2xl group-hover:bg-[#D4AF37]/10 transition-all duration-700"></div>
-        <div class="text-[10px] tracking-widest text-[#D4AF37] uppercase mb-4">{{ t().acervix }}</div>
-        <p class="text-sm opacity-80 leading-relaxed font-light">{{ t().acervixDesc }}</p>
-      </div>
-
-      <!-- Leadership -->
-      <div class="sec-stagger opacity-0 p-8 rounded-2xl bg-white/[0.02] border border-white/5 flex flex-col justify-center">
-        <div class="text-[10px] tracking-widest opacity-40 uppercase mb-6">{{ t().leadership }}</div>
-        <div class="flex flex-col gap-6">
-          <div class="flex justify-between items-center border-b border-white/5 pb-4">
-            <span class="text-sm font-medium tracking-wide text-white">{{ t().ceo }}</span>
-            <span class="opacity-50 text-[10px] uppercase tracking-wider text-right">{{ t().ceoRole }}</span>
-          </div>
-          <div class="flex justify-between items-center">
-            <span class="text-sm font-medium tracking-wide text-white">{{ t().cto }}</span>
-            <span class="opacity-50 text-[10px] uppercase tracking-wider text-right">{{ t().ctoRole }}</span>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
+  <div class="max-w-[1200px] mx-auto w-full">
     <!-- Footer -->
-    <footer class="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 lang-update-fx pb-10">
-      <div class="flex items-center gap-2">
+    <footer class="mt-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 lang-update-fx pb-4">
+      <div class="flex items-center gap-3">
         <span class="status-dot"></span>
-        <div class="text-[10px] font-mono tracking-widest opacity-30 text-center md:text-left">{{ t().rights }}</div>
+        <div class="text-[10px] font-mono tracking-widest opacity-40 text-center md:text-left">{{ t().rights }}</div>
       </div>
       <div class="flex flex-wrap justify-center gap-6 items-center">
-        <div class="text-[10px] font-mono tracking-widest text-gold text-center opacity-80 hover:opacity-100 transition-opacity"><a href="https://github.com/DOMINUSBABEL" target="_blank">DOMINUSBABEL</a></div>
-        <div class="hidden md:block h-3 w-px bg-white/10"></div>
-        <div class="text-[10px] tracking-[0.2em] opacity-40">{{ t().edition }}</div>
+        <div class="text-[10px] font-mono tracking-widest text-tech text-center hover:opacity-80 transition-opacity"><a href="https://github.com/DOMINUSBABEL" target="_blank">DOMINUSBABEL REPOSITORIES</a></div>
+        <div class="hidden md:block h-3 w-px bg-white/20"></div>
+        <div class="text-[10px] tracking-[0.2em] opacity-50">{{ t().edition }}</div>
       </div>
     </footer>
-
   </div>
 </div>
 

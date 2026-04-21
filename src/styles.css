@@ -5,8 +5,8 @@
 
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --color-gold: #D4AF37;
-  --color-gold-dark: #C5A028;
+  --color-tech: #38BDF8;
+  --color-tech-dark: #0284C7;
 }
 
 body {
@@ -20,16 +20,16 @@ body {
 }
 
 @layer utilities {
-  .gold-gradient {
-    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
+  .tech-gradient {
+    background: linear-gradient(135deg, var(--color-tech) 0%, var(--color-tech-dark) 100%);
   }
   
-  .text-gold {
-    color: var(--color-gold);
+  .text-tech {
+    color: var(--color-tech);
   }
   
   .border-subtle {
-    border-color: rgba(212, 175, 55, 0.2);
+    border-color: rgba(56, 189, 248, 0.2);
   }
   
   .bg-card {
@@ -40,9 +40,9 @@ body {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: var(--color-gold);
+    background-color: var(--color-tech);
     display: inline-block;
     margin-right: 8px;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
   }
 }
