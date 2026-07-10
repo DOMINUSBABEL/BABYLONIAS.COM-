@@ -2,6 +2,74 @@
   <!-- Interactive background subtle glow -->
   <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-[#38BDF8] to-transparent opacity-50 blur-sm"></div>
   
+  <!-- Cybernetic Babel Background Animation -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden flex justify-center items-end opacity-25 md:opacity-40 mix-blend-screen">
+    <!-- Gradient mask to blend the tower into the background -->
+    <div class="absolute inset-0 bg-gradient-to-t from-transparent via-[#050505]/50 to-[#050505] z-10 pointer-events-none"></div>
+    
+    <svg class="w-full max-w-[1200px] h-auto drop-shadow-[0_0_15px_rgba(56,189,248,0.4)] relative z-0" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g class="cyber-babel-lines" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+        <!-- Base Layer -->
+        <path class="draw-line delay-0" d="M100 580 L700 580 L650 480 L150 480 Z" />
+        <path class="draw-line delay-0" d="M250 580 L250 480 M350 580 L350 480 M450 580 L450 480 M550 580 L550 480" />
+        <path class="draw-line delay-0" d="M150 580 L250 480 M650 580 L550 480" stroke-opacity="0.3" />
+        <!-- Layer 1 -->
+        <path class="draw-line delay-1" d="M150 480 L650 480 L580 380 L220 380 Z" />
+        <path class="draw-line delay-1" d="M300 480 L300 380 M400 480 L400 380 M500 480 L500 380" />
+        <path class="draw-line delay-1" d="M220 480 L300 380 M580 480 L500 380" stroke-opacity="0.3" />
+        <!-- Layer 2 -->
+        <path class="draw-line delay-2" d="M220 380 L580 380 L520 280 L280 280 Z" />
+        <path class="draw-line delay-2" d="M350 380 L350 280 M450 380 L450 280" />
+        <path class="draw-line delay-2" d="M280 380 L350 280 M520 380 L450 280" stroke-opacity="0.3" />
+        <!-- Layer 3 -->
+        <path class="draw-line delay-3" d="M280 280 L520 280 L470 180 L330 180 Z" />
+        <path class="draw-line delay-3" d="M400 280 L400 180" />
+        <path class="draw-line delay-3" d="M330 280 L400 180 M470 280 L400 180" stroke-opacity="0.3" />
+        <!-- Layer 4 -->
+        <path class="draw-line delay-4" d="M330 180 L470 180 L430 80 L370 80 Z" />
+        <!-- Layer 5 (Pinnacle) -->
+        <path class="draw-line delay-5" d="M370 80 L430 80 L410 30 L390 30 Z" />
+        <path class="draw-line delay-5" d="M400 80 L400 30" />
+        <!-- Beams/Signals -->
+        <path class="beam-line delay-6" d="M400 30 L400 -150" />
+        
+        <!-- Cybernetic Nodes / Dots -->
+        <circle class="cyber-node delay-0" cx="100" cy="580" r="2" fill="#38BDF8"/>
+        <circle class="cyber-node delay-0" cx="700" cy="580" r="2" fill="#38BDF8"/>
+        <circle class="cyber-node delay-0" cx="250" cy="580" r="2" fill="#38BDF8"/>
+        <circle class="cyber-node delay-0" cx="550" cy="580" r="2" fill="#38BDF8"/>
+        
+        <circle class="cyber-node delay-1" cx="150" cy="480" r="2" fill="#38BDF8"/>
+        <circle class="cyber-node delay-1" cx="650" cy="480" r="2" fill="#38BDF8"/>
+        <circle class="cyber-node delay-1" cx="300" cy="480" r="2" fill="#38BDF8"/>
+        <circle class="cyber-node delay-1" cx="500" cy="480" r="2" fill="#38BDF8"/>
+        
+        <circle class="cyber-node delay-2" cx="220" cy="380" r="2" fill="#38BDF8"/>
+        <circle class="cyber-node delay-2" cx="580" cy="380" r="2" fill="#38BDF8"/>
+        <circle class="cyber-node delay-2" cx="350" cy="380" r="2" fill="#38BDF8"/>
+        <circle class="cyber-node delay-2" cx="450" cy="380" r="2" fill="#38BDF8"/>
+        
+        <circle class="cyber-node delay-3" cx="280" cy="280" r="2" fill="#38BDF8"/>
+        <circle class="cyber-node delay-3" cx="520" cy="280" r="2" fill="#38BDF8"/>
+        <circle class="cyber-node delay-3" cx="400" cy="280" r="3" fill="#38BDF8"/>
+        
+        <circle class="cyber-node delay-4" cx="330" cy="180" r="2" fill="#38BDF8"/>
+        <circle class="cyber-node delay-4" cx="470" cy="180" r="2" fill="#38BDF8"/>
+        
+        <circle class="cyber-node delay-5" cx="370" cy="80" r="2" fill="#38BDF8"/>
+        <circle class="cyber-node delay-5" cx="430" cy="80" r="2" fill="#38BDF8"/>
+        
+        <circle class="cyber-node delay-6" cx="400" cy="30" r="4" fill="#38BDF8"/>
+        
+        <!-- Glowing Data Packets traveling along vertical lines -->
+        <circle cx="250" cy="580" r="1.5" fill="#FFF" class="packet-anim delay-0" />
+        <circle cx="550" cy="580" r="1.5" fill="#FFF" class="packet-anim delay-1" />
+        <circle cx="300" cy="480" r="1.5" fill="#FFF" class="packet-anim delay-2" />
+        <circle cx="500" cy="480" r="1.5" fill="#FFF" class="packet-anim delay-3" />
+      </g>
+    </svg>
+  </div>
+  
   <div class="max-w-[1200px] mx-auto w-full flex flex-col gap-10 flex-grow relative z-10">
     
     <!-- Top Navigation / Lang Switcher -->
@@ -16,12 +84,19 @@
       <!-- Primary nav Links -->
       <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-[10px] md:text-xs tracking-widest uppercase mb-4 md:mb-0 lang-update-fx">
         <a routerLink="/" routerLinkActive="text-tech border-b border-tech" [routerLinkActiveOptions]="{exact: true}" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Inicio</a>
-        <a routerLink="/thesis" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Tesis</a>
+        <a routerLink="/thesis" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Visión/Misión</a>
         <a routerLink="/services" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Servicios</a>
+        <a routerLink="/intelligence" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Inteligencia</a>
+        <a routerLink="/sovereignty" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Soberanía</a>
+        <a routerLink="/trust" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Trust</a>
+        <a routerLink="/analytics" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Analytics</a>
+        <a routerLink="/clients" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Clientes</a>
+        <a routerLink="/maintenance" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Capacitación</a>
         <a routerLink="/tech" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Núcleo</a>
         <a routerLink="/hub" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Hub</a>
         <a routerLink="/portfolio" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Portafolio</a>
         <a routerLink="/consulting" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Consultoría</a>
+        <a routerLink="/taskbar-4x" routerLinkActive="text-tech border-b border-tech" class="px-1 pb-1 border-b border-transparent hover:text-tech hover:border-tech transition-all">Taskbar 4X</a>
       </div>
 
       <!-- Lang selection -->
